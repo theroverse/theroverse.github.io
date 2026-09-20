@@ -39,7 +39,7 @@ export const GenesisSimulator: React.FC = () => {
     soundFx.playWarp();
     setIsSimulating(true);
     setProgress(5);
-    setCurrentActionLog('Inicializando setup.exe e checando privilégios de Administrador...');
+    setCurrentActionLog('Inicializando genesis.exe e checando privilégios de Administrador...');
 
     const checkedItems = items.filter(i => i.checked);
     let stepIndex = 0;
@@ -74,7 +74,7 @@ export const GenesisSimulator: React.FC = () => {
               <Laptop className="w-4 h-4" />
             </span>
             <span className="text-xs font-mono tracking-widest text-purple-400 uppercase font-semibold">
-              Simulador do Assistente SETUP.EXE
+              Simulador do Assistente Genesis.exe
             </span>
           </div>
           <h3 className="text-xl font-bold text-white mt-1">
@@ -189,7 +189,7 @@ export const GenesisSimulator: React.FC = () => {
         <div className="mt-3 pt-3 border-t border-white/5 text-slate-500 text-[11px] flex flex-col md:flex-row md:items-center justify-between gap-2">
           <span>Comando desacompanhado equivalente:</span>
           <code className="bg-purple-950/60 text-purple-300 px-2 py-1 rounded border border-purple-500/30">
-            .\setup.exe --unattended --preset developer
+            .\genesis.exe --unattended --preset developer
           </code>
         </div>
       </div>

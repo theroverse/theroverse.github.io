@@ -23,7 +23,7 @@ export const LANDING_PAGES_DATA: Record<ToolId, LandingPageData> = {
     },
     solutionSummary: {
       title: 'A Terraformação Completa em 17 Etapas Guiadas',
-      description: 'O SETUP.EXE é uma matriz executiva que reúne tudo o que um desenvolvedor e usuário avançado realmente precisa em 4 pilares: Sistema & Terminal, Navegadores, Jogos e a suíte completa de Claude Code.',
+      description: 'O Genesis é uma matriz executiva que reúne tudo o que um desenvolvedor e usuário avançado realmente precisa em 4 pilares: Sistema & Terminal, Navegadores, Jogos e a suíte completa de Claude Code.',
       stats: [
         { label: 'Etapas Guiadas', value: '17', hint: 'Do terminal aos jogos' },
         { label: 'Tempo Economizado', value: '~4.5h', hint: 'Chega de caçar instaladores' },
@@ -62,7 +62,7 @@ export const LANDING_PAGES_DATA: Record<ToolId, LandingPageData> = {
       }
     ],
     cliSnippet: {
-      command: '.\\setup.exe --preset developer --unattended',
+      command: '.\\genesis.exe --preset developer --unattended',
       description: 'Execute o assistente gráfico interativo ou rode em modo desacompanhado para automação em lote.',
       outputSample: `[GENESIS] Inicializando matriz de terraformação Windows 11...
 [✓] Terminal Starship injetado com sucesso no perfil PowerShell.

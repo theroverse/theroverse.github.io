@@ -173,37 +173,52 @@ export const CosmicNavbar: React.FC<CosmicNavbarProps> = ({
         </div>
       </div>
 
-      {/* Mobile Bar for fast switching */}
-      <div className="md:hidden flex items-center justify-between overflow-x-auto px-4 py-2 border-t border-white/5 gap-2 custom-scrollbar">
+      {/* Mobile Bar for fast switching: só ícones + o nome do item ATIVO.
+          Com todos os nomes visíveis essa faixa ficava longa demais (e
+          rolável na horizontal) na largura de um celular. */}
+      <div className="md:hidden flex items-center justify-center gap-1.5 overflow-x-auto px-3 py-2 border-t border-white/5 custom-scrollbar">
         <button
           onClick={() => handleNavClick('portal-hub')}
-          className={`shrink-0 px-2.5 py-1 rounded-lg text-xs font-mono ${
+          title={t.navbar.hub}
+          aria-label={t.navbar.hub}
+          aria-current={activeView === 'portal-hub' ? 'page' : undefined}
+          className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
             activeView === 'portal-hub' ? 'bg-white/20 text-white font-semibold' : 'text-slate-400'
           }`}
         >
-          {t.navbar.hub}
+          <Compass className="w-3.5 h-3.5 text-cyan-400" />
+          {activeView === 'portal-hub' && <span>{t.navbar.hub}</span>}
         </button>
-        {ECOSYSTEM_TOOLS.map(tool => (
-          <button
-            key={tool.id}
-            onClick={() => handleNavClick(tool.id)}
-            className={`shrink-0 px-2.5 py-1 rounded-lg text-xs font-mono flex items-center gap-1.5 ${
-              activeView === tool.id ? 'bg-white/20 text-white font-bold' : 'text-slate-400'
-            }`}
-          >
-            <span>{tool.name}</span>
-          </button>
-        ))}
+
+        {ECOSYSTEM_TOOLS.map(tool => {
+          const isActive = activeView === tool.id;
+          return (
+            <button
+              key={tool.id}
+              onClick={() => handleNavClick(tool.id)}
+              title={tool.name}
+              aria-label={tool.name}
+              aria-current={isActive ? 'page' : undefined}
+              className={`shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
+                isActive ? 'bg-white/20 text-white font-bold' : 'text-slate-400'
+              }`}
+            >
+              <AppIcon toolId={tool.id} size={14} />
+              {isActive && <span>{tool.name}</span>}
+            </button>
+          );
+        })}
+
         <a
           href="https://netovieira.github.io/"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => soundFx.playClick()}
-          className="shrink-0 px-2.5 py-1 rounded-lg text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1 bg-cyan-500/10 border border-cyan-500/20"
+          title={t.navbar.architectHq}
+          aria-label={t.navbar.architectHq}
+          className="shrink-0 flex items-center px-2.5 py-1.5 rounded-lg text-xs font-mono text-cyan-400 hover:text-cyan-300 bg-cyan-500/10 border border-cyan-500/20"
         >
-          <Terminal className="w-3 h-3" />
-          <span>{t.navbar.architectHq}</span>
-          <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+          <Terminal className="w-3.5 h-3.5" />
         </a>
       </div>
     </header>

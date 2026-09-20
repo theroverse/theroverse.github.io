@@ -49,7 +49,7 @@ export const ContextShowcase: React.FC = () => {
             }`}
           >
             <Monitor className="h-3.5 w-3.5 text-purple-400" />
-            <span>Windows 11 & Setup.exe</span>
+            <span>Windows 11 & Genesis.exe</span>
           </button>
 
           <button
@@ -99,7 +99,7 @@ export const ContextShowcase: React.FC = () => {
               </div>
             </div>
 
-            {/* Central Window: Genesis SETUP.EXE faithful recreation with new Icon */}
+            {/* Central Window: Genesis.exe faithful recreation with new Icon */}
             <div className="relative mx-auto w-full max-w-3xl rounded-xl border border-slate-700/60 bg-[#0a0f1d]/95 backdrop-blur-xl shadow-2xl overflow-hidden my-4">
               {/* Window Titlebar */}
               <div className="flex items-center justify-between border-b border-slate-800/80 px-4 py-2.5 bg-[#080d1a]">
@@ -107,7 +107,7 @@ export const ContextShowcase: React.FC = () => {
                   {/* New Genesis Icon in Titlebar */}
                   <EcosystemIcon id="genesis" variant="line" size={16} />
                   <span className="text-xs font-mono font-bold tracking-widest text-slate-200">
-                    SETUP . EXE
+                    GENESIS . EXE
                   </span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-400">

@@ -50,7 +50,7 @@ export const translations = {
       portalsBadge: 'Portais Hiperespaço',
       portalsTitle: 'Escolha uma Entidade & Salte Através do Portal',
       architectBtn: 'QG do Arquiteto · Anthero Vieira Neto',
-      enterLanding: 'Entrar na Landing Page',
+      enterLanding: 'Viajar pelo portal',
       roles: {
         planeta: 'Planeta',
         nave: 'Nave Cósmica',
@@ -162,7 +162,7 @@ export const translations = {
       portalsBadge: 'Hyperspace Portals',
       portalsTitle: 'Select an Entity & Jump Through the Portal',
       architectBtn: 'Architect HQ · Anthero Vieira Neto',
-      enterLanding: 'Enter Landing Page',
+      enterLanding: 'Travel through the portal',
       roles: {
         planeta: 'Planet',
         nave: 'Starship',

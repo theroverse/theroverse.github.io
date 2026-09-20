@@ -13,6 +13,21 @@ interface HeaderProps {
   setShowWireframe: (show: boolean) => void;
 }
 
+// Single source for the icons-vault tabs: each one always shows its icon, but
+// the (long) label only appears for the ACTIVE tab on phones and for every tab
+// from `sm:` up - the full labels made this bar overflow on mobile.
+const VAULT_TABS: {
+  id: HeaderProps['activeTab'];
+  label: string;
+  Icon: React.ComponentType<{ className?: string }>;
+  iconClass: string;
+}[] = [
+  { id: 'grid', label: 'Grade de Ícones', Icon: Layers, iconClass: 'text-cyan-400' },
+  { id: 'universe', label: 'Mapa do Universo (Planetas / Naves / Habitantes)', Icon: Globe, iconClass: 'text-emerald-400' },
+  { id: 'contexts', label: 'Contextos Reais (Windows 11 / Terminal)', Icon: Monitor, iconClass: 'text-purple-400' },
+  { id: 'guidelines', label: 'Identidade & Paleta Sem Repetição', Icon: Palette, iconClass: 'text-amber-400' },
+];
+
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
@@ -107,53 +122,26 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Tab Navigation */}
         <div className="flex items-center gap-1 overflow-x-auto border-t border-slate-800/60 pt-2 pb-2 text-xs font-mono">
-          <button
-            onClick={() => setActiveTab('grid')}
-            className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 transition-colors ${
-              activeTab === 'grid'
-                ? 'bg-slate-800/80 text-white font-semibold border border-slate-700/80'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/50'
-            }`}
-          >
-            <Layers className="h-3.5 w-3.5 text-cyan-400" />
-            <span>Grade de Ícones</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('universe')}
-            className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 transition-colors ${
-              activeTab === 'universe'
-                ? 'bg-slate-800/80 text-white font-semibold border border-slate-700/80'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/50'
-            }`}
-          >
-            <Globe className="h-3.5 w-3.5 text-emerald-400" />
-            <span>Mapa do Universo (Planetas / Naves / Habitantes)</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('contexts')}
-            className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 transition-colors ${
-              activeTab === 'contexts'
-                ? 'bg-slate-800/80 text-white font-semibold border border-slate-700/80'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/50'
-            }`}
-          >
-            <Monitor className="h-3.5 w-3.5 text-purple-400" />
-            <span>Contextos Reais (Windows 11 / Terminal)</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('guidelines')}
-            className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 transition-colors ${
-              activeTab === 'guidelines'
-                ? 'bg-slate-800/80 text-white font-semibold border border-slate-700/80'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/50'
-            }`}
-          >
-            <Palette className="h-3.5 w-3.5 text-amber-400" />
-            <span>Identidade & Paleta Sem Repetição</span>
-          </button>
+          {VAULT_TABS.map(({ id, label, Icon, iconClass }) => {
+            const isActive = activeTab === id;
+            return (
+              <button
+                key={id}
+                onClick={() => setActiveTab(id)}
+                title={label}
+                aria-label={label}
+                aria-current={isActive ? 'page' : undefined}
+                className={`shrink-0 flex items-center gap-2 rounded-lg px-3.5 py-1.5 transition-colors ${
+                  isActive
+                    ? 'bg-slate-800/80 text-white font-semibold border border-slate-700/80'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/50'
+                }`}
+              >
+                <Icon className={`h-3.5 w-3.5 ${iconClass}`} />
+                <span className={isActive ? 'inline' : 'hidden sm:inline'}>{label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </header>

@@ -70,12 +70,12 @@ export const ECOSYSTEM_TOOLS: EcosystemTool[] = [
     siteUrl: undefined,
     repoUrl: undefined,
     description: 'Assistente automatizado de setup pós-formatação do Windows 11. Instala Terminal Starship, PowerToys, Windhawk, navegadores, jogos e a suíte Claude Code.',
-    designRationale: 'A gênese de um cosmos digital é simbolizada por uma centelha primordial emergindo de um diamante cósmico de quatro quadrantes. Cada quadrante evoca um dos 4 pilares configurados pelo SETUP.EXE: Sistema/Terminal, Navegadores, Jogos e Claude Code Suite.',
+    designRationale: 'A gênese de um cosmos digital é simbolizada por uma centelha primordial emergindo de um diamante cósmico de quatro quadrantes. Cada quadrante evoca um dos 4 pilares configurados pelo Genesis: Sistema/Terminal, Navegadores, Jogos e Claude Code Suite.',
     symbolism: [
       'Diamante Primordial (Octaedro): A estrutura cristalina estável do novo Windows 11',
       'Centelha de 4 Pontas: A fagulha de criação que acorda a máquina recém-formatada',
       'Camadas Concêntricas de Expansão: Os passos progressivos do assistente (Etapa 1 a 17)',
-      'Aura Violeta Cósmica: Harmonia com os botões e gradientes da interface SETUP.EXE'
+      'Aura Violeta Cósmica: Harmonia com os botões e gradientes da interface do Genesis'
     ],
     geometricSpecs: [
       'Losango/diamante com proporção de ouro (largura 44px, altura 44px)',
@@ -97,7 +97,7 @@ export const ECOSYSTEM_TOOLS: EcosystemTool[] = [
         direction: 'to',
       }
     ],
-    cliUsage: 'setup.exe --unattended',
+    cliUsage: 'genesis.exe --unattended',
     landing: LANDING_PAGES_DATA.genesis
   },
   {
