@@ -43,10 +43,10 @@ Publicado em: **https://theroverse.github.io/**
 | Ferramenta | Papel no ecossistema | Repositório |
 |---|---|---|
 | Nexo | Planeta (armazenamento local / media hub) | [avnt-sistemas/nexo](https://github.com/avnt-sistemas/nexo) |
-| Genesis | Planeta (setup pós-formatação do Windows 11) | — |
-| Athena | Nave (indexação de arquitetura) | [netovieira/athena](https://github.com/netovieira/athena) |
-| Zeus | Habitante (planejamento de tarefas) | [netovieira/zeus](https://github.com/netovieira/zeus) |
-| Thero | Habitante (setup do Claude Code) | [netovieira/thero](https://github.com/netovieira/thero) |
+| Genesis | Planeta (setup pós-formatação do Windows 11) | [theroverse/genesis](https://github.com/theroverse/genesis) |
+| Athena | Nave (indexação de arquitetura) | [theroverse/athena](https://github.com/theroverse/athena) |
+| Zeus | Habitante (planejamento de tarefas) | [theroverse/zeus](https://github.com/theroverse/zeus) |
+| Thero | Habitante (setup do Claude Code) | [theroverse/thero](https://github.com/theroverse/thero) |
 
 Quem entra ou sai do ecossistema é ajustado em um único arquivo:
 [`src/data/ecosystem.ts`](src/data/ecosystem.ts) (ficha, cores, ícone,

@@ -67,8 +67,8 @@ export const ECOSYSTEM_TOOLS: EcosystemTool[] = [
       gradient: 'linear-gradient(135deg, #C084FC 0%, #7C3AED 100%)',
       name: 'Nebulosa Ametista & Violeta Cósmico',
     },
-    siteUrl: 'https://github.com/netovieira/genesis/releases/latest',
-    repoUrl: 'https://github.com/netovieira/genesis',
+    siteUrl: 'https://github.com/theroverse/genesis/releases/latest',
+    repoUrl: 'https://github.com/theroverse/genesis',
     description: 'Assistente automatizado de setup pós-formatação do Windows 11. Instala Terminal Starship, PowerToys, Windhawk, navegadores, jogos e a suíte Claude Code.',
     designRationale: 'A gênese de um cosmos digital é simbolizada por uma centelha primordial emergindo de um diamante cósmico de quatro quadrantes. Cada quadrante evoca um dos 4 pilares configurados pelo Genesis: Sistema/Terminal, Navegadores, Jogos e Claude Code Suite.',
     symbolism: [
@@ -116,8 +116,8 @@ export const ECOSYSTEM_TOOLS: EcosystemTool[] = [
       gradient: 'linear-gradient(135deg, #34D399 0%, #059669 100%)',
       name: 'Menta Esmeralda & Cyber Jade',
     },
-    siteUrl: undefined,
-    repoUrl: 'https://github.com/netovieira/athena',
+    siteUrl: 'https://theroverse.github.io/athena/',
+    repoUrl: 'https://github.com/theroverse/athena',
     description: 'Indexador recursivo de código que resume projetos inteiros bottom-up, gerando um mapa arquitetural completo com cache incremental de hash.',
     designRationale: 'A nave exploradora Athena é expressa como um vetor aerodinâmico em chevron ascendente integrado a um radar neural. Ramos de varredura convergem recursivamente da base para o ápice, simbolizando a leitura bottom-up de arquivos até a raiz.',
     symbolism: [
@@ -157,16 +157,21 @@ export const ECOSYSTEM_TOOLS: EcosystemTool[] = [
     roleTitle: 'Habitante Estrategista / Oráculo Tático',
     roleDescription: 'O habitante tático que cruza o objetivo da missão com o mapa da Athena, disparando um plano de ação preciso antes de tocar no código.',
     colors: {
-      primary: '#EAB308',
-      secondary: '#CA8A04',
-      accent: '#FDE047',
-      glow: 'rgba(234, 179, 8, 0.45)',
-      bgDark: '#241B05',
-      gradient: 'linear-gradient(135deg, #FDE047 0%, #D97706 100%)',
-      name: 'Ouro Imperial & Raio Elétrico',
+      // Trocado de amarelo-ouro (#EAB308, gradiente indo ate #D97706) pra
+      // lima eletrico: o tom antigo ficava proximo demais do laranja do
+      // thero (#F97316) a distancia de olhar rapido - principalmente o
+      // gradiente, que descia ate um amber quase identico. Lima fica
+      // inconfundivel e ainda combina com o tema de raio/voltagem.
+      primary: '#A3E635',
+      secondary: '#65A30D',
+      accent: '#D9F99D',
+      glow: 'rgba(163, 230, 53, 0.45)',
+      bgDark: '#1A2205',
+      gradient: 'linear-gradient(135deg, #D9F99D 0%, #65A30D 100%)',
+      name: 'Lima Elétrico & Voltagem Verde',
     },
-    siteUrl: undefined,
-    repoUrl: 'https://github.com/netovieira/zeus',
+    siteUrl: 'https://theroverse.github.io/zeus/',
+    repoUrl: 'https://github.com/theroverse/zeus',
     description: 'Planejador de tarefas que cruza intenções com os resumos da Athena e gera um plano objetivo em Markdown (.claude/zeus-plan.md) sem adivinhações.',
     designRationale: 'O raio divino de Zeus é reinterpretado como um vetor geométrico angular que atravessa um retículo de coordenadas cirúrgicas. O raio representa a tomada de decisão instantânea; as miras representam a precisão de selecionar apenas os arquivos que realmente importam.',
     symbolism: [
@@ -214,8 +219,8 @@ export const ECOSYSTEM_TOOLS: EcosystemTool[] = [
       gradient: 'linear-gradient(135deg, #FB923C 0%, #C2410C 100%)',
       name: 'Terracota Solar & Âmbar Flamejante',
     },
-    siteUrl: 'https://netovieira.github.io/thero/',
-    repoUrl: 'https://github.com/netovieira/thero',
+    siteUrl: 'https://theroverse.github.io/thero/',
+    repoUrl: 'https://github.com/theroverse/thero',
     description: 'Suíte que transforma o Claude Code numa máquina de trabalho profissional: injeta contexto persistente, regras de engenharia sênior e coordena Athena e Zeus.',
     designRationale: 'O ícone sintetiza o visor HUD / elmo do habitante navegador espacial fundido ao glifo de um "T" arquitetônico. A linha horizontal do horizonte representa estabilidade e maturidade sênior; o foco central com arco de cobertura simboliza visão holística de engenharia.',
     symbolism: [
