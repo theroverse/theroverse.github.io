@@ -176,7 +176,7 @@ export const CosmicNavbar: React.FC<CosmicNavbarProps> = ({
       {/* Mobile Bar for fast switching: só ícones + o nome do item ATIVO.
           Com todos os nomes visíveis essa faixa ficava longa demais (e
           rolável na horizontal) na largura de um celular. */}
-      <div className="md:hidden flex items-center justify-center gap-1.5 overflow-x-auto px-3 py-2 border-t border-white/5 custom-scrollbar">
+      <div className="md:hidden flex items-center justify-between gap-1.5 overflow-x-auto px-4 py-2 border-t border-white/5 custom-scrollbar">
         <button
           onClick={() => handleNavClick('portal-hub')}
           title={t.navbar.hub}
@@ -203,7 +203,7 @@ export const CosmicNavbar: React.FC<CosmicNavbarProps> = ({
                 isActive ? 'bg-white/20 text-white font-bold' : 'text-slate-400'
               }`}
             >
-              <AppIcon toolId={tool.id} size={14} />
+              <AppIcon toolId={tool.id} size={isActive ? 16 : 24} />
               {isActive && <span>{tool.name}</span>}
             </button>
           );
