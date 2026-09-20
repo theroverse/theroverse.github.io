@@ -1,0 +1,6 @@
+{
+  "name": "THEROVERSE",
+  "description": "THEROVERSE — Suíte de ferramentas autônomas interconectadas: Genesis, Nexo, Thero, Athena e Zeus. Autonomia total, zero telemetria invasiva e controle local.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

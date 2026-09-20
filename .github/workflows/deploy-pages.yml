@@ -1,0 +1,86 @@
+name: deploy-pages
+
+# Builds the static SPA (Vite + React) and publishes it to GitHub Pages for
+# this repository: https://theroverse.github.io/
+#
+# One-time setup on GitHub: Settings > Pages > Source = "GitHub Actions".
+# (This is an org root site, so Vite's default base "/" is already correct.)
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "index.html"
+      - "package.json"
+      - "package-lock.json"
+      - "tsconfig.json"
+      - "vite.config.ts"
+      - ".github/workflows/deploy-pages.yml"
+  pull_request:
+    paths:
+      - "src/**"
+      - "index.html"
+      - "package.json"
+      - "package-lock.json"
+      - "tsconfig.json"
+      - "vite.config.ts"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+# Required by actions/deploy-pages (id-token) and actions/configure-pages (pages).
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Serialize per-ref so a PR build never races the main deploy artifact.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        # npm install (not `npm ci`): the lockfile is authored on Windows and may
+        # not carry every Linux native binding the bundler needs, which makes
+        # `npm ci`'s strict tree validation fail on the runner. `npm install`
+        # reconciles the tree and fetches the correct platform binding. Cache
+        # still keys off package-lock.json.
+        run: npm install --no-audit --no-fund --prefer-offline
+
+      - name: Type check
+        run: npm run lint
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    # Only publish to Pages from the main branch (never from forks/PRs).
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
