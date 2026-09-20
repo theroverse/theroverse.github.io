@@ -67,8 +67,8 @@ export const ECOSYSTEM_TOOLS: EcosystemTool[] = [
       gradient: 'linear-gradient(135deg, #C084FC 0%, #7C3AED 100%)',
       name: 'Nebulosa Ametista & Violeta Cósmico',
     },
-    siteUrl: undefined,
-    repoUrl: undefined,
+    siteUrl: 'https://github.com/netovieira/genesis/releases/latest',
+    repoUrl: 'https://github.com/netovieira/genesis',
     description: 'Assistente automatizado de setup pós-formatação do Windows 11. Instala Terminal Starship, PowerToys, Windhawk, navegadores, jogos e a suíte Claude Code.',
     designRationale: 'A gênese de um cosmos digital é simbolizada por uma centelha primordial emergindo de um diamante cósmico de quatro quadrantes. Cada quadrante evoca um dos 4 pilares configurados pelo Genesis: Sistema/Terminal, Navegadores, Jogos e Claude Code Suite.',
     symbolism: [
